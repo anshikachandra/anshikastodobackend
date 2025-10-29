@@ -127,15 +127,15 @@ const start = async () => {
 
     const port = process.env.PORT || 3001
     // Serve client build in production if present
-    if (process.env.NODE_ENV === 'production'){
-        const path = require('path')
-        const clientDist = path.join(__dirname, '..', 'todolist', 'dist')
-        app.use(express.static(clientDist))
-        // Serve index.html for any unknown routes (SPA)
-        app.get('*', (req, res) => {
-            res.sendFile(path.join(clientDist, 'index.html'))
-        })
-    }
+    // if (process.env.NODE_ENV === 'production'){
+    //     const path = require('path')
+    //     const clientDist = path.join(__dirname, '..', 'todolist', 'dist')
+    //     app.use(express.static(clientDist))
+    //     // Serve index.html for any unknown routes (SPA)
+    //     app.get('*', (req, res) => {
+    //         res.sendFile(path.join(clientDist, 'index.html'))
+    //     })
+    // }
 
     // Optionally start HTTPS if certs exist or USE_HTTPS=true
     const fs = require('fs')
